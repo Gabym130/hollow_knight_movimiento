@@ -48,3 +48,14 @@ func jump_logic():
 		if Input.is_action_just_pressed("ui_accept"):
 			jump_amount -= 1
 			velocity.y -= lerp(jump_speed, acceleration, 0.1)
+	
+	if not is_on_floor():
+		if jump_amount > 0:
+			if Input.is_action_just_pressed("ui_accept"):
+				velocity.y -= lerp(jump_speed, acceleration, 1)
+			
+			if Input.is_action_just_released("ui_accept"):
+				velocity.y = lerp(velocity.y, gravity, 0.2)
+				velocity.y *= 0.3
+	else:
+		return
