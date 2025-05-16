@@ -1,6 +1,9 @@
-[gd_scene load_steps=2 format=3 uid="uid://cfwgixtx4k1ye"]
+[gd_scene load_steps=3 format=3 uid="uid://cfwgixtx4k1ye"]
 
 [ext_resource type="PackedScene" uid="uid://bw1t0vy05ct5t" path="res://Player/Scenes/player.tscn" id="1_12axb"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_12axb"]
+size = Vector2(575, 100)
 
 [node name="level_1" type="Node2D"]
 
@@ -8,3 +11,16 @@
 
 [node name="Camera2D" type="Camera2D" parent="."]
 zoom = Vector2(2, 2)
+
+[node name="temporary_floor" type="StaticBody2D" parent="."]
+
+[node name="ColorRect" type="ColorRect" parent="temporary_floor"]
+offset_left = -288.0
+offset_top = 63.0
+offset_right = 287.0
+offset_bottom = 162.0
+color = Color(0, 0, 0, 1)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="temporary_floor"]
+position = Vector2(-0.5, 112)
+shape = SubResource("RectangleShape2D_12axb")

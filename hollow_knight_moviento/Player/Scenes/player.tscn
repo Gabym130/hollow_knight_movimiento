@@ -4,6 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://c2wbfcrqd2tq1" path="res://Player/Sprites/Player_hollow_knight.png" id="2_52sos"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_omv0o"]
+size = Vector2(12, 18)
 
 [sub_resource type="Animation" id="Animation_bw35f"]
 resource_name = "Idle"
@@ -102,12 +103,14 @@ _data = {
 script = ExtResource("1_rg7kn")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(0, -12)
 texture = ExtResource("2_52sos")
 hframes = 8
 vframes = 7
 frame = 1
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, 1)
 shape = SubResource("RectangleShape2D_omv0o")
 
 [node name="anim" type="AnimationPlayer" parent="."]

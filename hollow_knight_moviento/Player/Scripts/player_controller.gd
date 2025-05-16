@@ -2,9 +2,12 @@ extends CharacterBody2D
 
 @export var move_speed = 120.0
 @export var deceleration = 0.1
+@export var gravity = 500.0
 var movement = Vector2()
 
 func _physics_process(delta):
+	velocity.y  += gravity * delta
+	
 	horizontal_movement()
 	set_animations()
 	flip()
