@@ -100,6 +100,7 @@ _data = {
 }
 
 [node name="Player" type="CharacterBody2D"]
+safe_margin = 0.14
 script = ExtResource("1_rg7kn")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
@@ -117,3 +118,11 @@ shape = SubResource("RectangleShape2D_omv0o")
 libraries = {
 &"": SubResource("AnimationLibrary_vov0p")
 }
+
+[node name="raycast" type="Node2D" parent="."]
+
+[node name="left_ray" type="RayCast2D" parent="raycast"]
+target_position = Vector2(-14, 0)
+
+[node name="right_ray" type="RayCast2D" parent="raycast"]
+target_position = Vector2(14, 0)
