@@ -56,7 +56,7 @@ position = Vector2(19.5, -32)
 shape = SubResource("RectangleShape2D_cpxlu")
 
 [node name="wall_3" type="StaticBody2D" parent="."]
-position = Vector2(-67, -67)
+position = Vector2(-83, -44)
 
 [node name="ColorRect" type="ColorRect" parent="wall_3"]
 offset_top = -103.0

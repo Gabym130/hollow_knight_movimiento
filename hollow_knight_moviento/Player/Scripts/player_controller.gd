@@ -48,6 +48,8 @@ func set_animations():
 		$anim.play("Jump")
 	if velocity.y > 10:
 		$anim.play("Fall")
+	if is_on_wall_only():
+		$anim.play("Fall")
 
 func flip():
 	if velocity.x > 0.0:
@@ -81,9 +83,9 @@ func wall_logic():
 	if is_on_wall_only():
 		velocity.y = 10
 		if Input.is_action_just_pressed("ui_accept"):
-			if left_ray.is_colliding():
-				velocity = Vector2(wall_x_force, wall_y_force)
-				wall_jumping()
+			#if left_ray.is_colliding():
+				#velocity = Vector2(wall_x_force, wall_y_force)
+				#wall_jumping()
 			if right_ray.is_colliding():
 				velocity = Vector2(-wall_x_force, wall_y_force)
 				wall_jumping()
