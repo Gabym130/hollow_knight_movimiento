@@ -34,6 +34,10 @@ func set_animations():
 		$anim.play("Move")
 	if velocity.x == 0:
 		$anim.play("Idle")
+	if velocity.y < 0:
+		$anim.play("Jump")
+	if velocity.y > 10:
+		$anim.play("Fall")
 
 func flip():
 	if velocity.x > 0.0:
